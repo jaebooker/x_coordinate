@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
+from .models import Project
 
 def index(request):
     project_list = Project.objects.order_by('-created_on')[:20]
