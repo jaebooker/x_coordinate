@@ -8,5 +8,9 @@ def index(request):
     context = {'project_list': project_list}
     return render(request, 'projects/index.html', context)
 
-def detail(request, project_id):
-    return HttpResponse("You're looking at user %s." % project_id)
+def detail(request, question_id):
+    try:
+        project = Project.objects.get(pk=project_id)
+    except Project.DoesNotExist:
+        raise Http404("Project does not exist")
+    return render(request, 'projects/detail.html', {'project': project})

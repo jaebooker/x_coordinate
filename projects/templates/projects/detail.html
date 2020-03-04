@@ -1,0 +1,12 @@
+<h1>{% project.title %}</h1>
+    <ul>
+    <h3>{% project.description %}
+        <li>
+            {% project.contributers %}
+        </li>
+    </ul>
+{% if project.number_of_roles-project.roles_filled > 0 %}
+<h2>Project still needs <b>{% project.number_of_roles-project.roles_filled %}</b> more contributers!</h2>
+{% else %}
+    <h2>This project has filled all it's roles!</h2>
+{% endif %}
