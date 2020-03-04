@@ -3,6 +3,8 @@ from django.http import HttpResponse
 
 from .models import User
 
+app_name = 'users'
+
 def index(request):
     return HttpResponse("Hello, you're in the User index")
 
